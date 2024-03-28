@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/auth/Login';
 import Home from './pages/Home';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import Fallback from './components/Fallback';
 
 function App() {
   const [username, setUsername] = useState('');
@@ -42,6 +43,7 @@ function App() {
         />
 
         <Route path='/home' element={<Home />} />
+        <Route path='*' element={<Fallback />} />
       </Routes>
     </>
   );
