@@ -5,21 +5,15 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const navigate = useNavigate();
 
   const authContext = useAuth();
 
   const handleSubmit = () => {
-    if (username === 'monciego' && password === 'password') {
-      authContext.setIsAuthenticated(true);
-      setShowSuccessMessage(true);
-      setShowErrorMessage(false);
+    if (authContext.login(username, password)) {
       navigate('/home');
     } else {
-      authContext.setIsAuthenticated(false);
-      setShowSuccessMessage(false);
       setShowErrorMessage(true);
     }
   };
@@ -34,7 +28,6 @@ const Login = () => {
 
   return (
     <form>
-      <div>{showSuccessMessage && 'success'}</div>
       <div>{showErrorMessage && 'error'}</div>
       <div>
         <label htmlFor='username'>Username</label>
