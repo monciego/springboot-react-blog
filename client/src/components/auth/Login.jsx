@@ -1,27 +1,18 @@
-import { useState } from 'react';
-
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
-
+const Login = ({
+  username,
+  setUsername,
+  password,
+  setPassword,
+  showSuccessMessage,
+  showErrorMessage,
+  handleSubmit,
+}) => {
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    if (username === 'monciego' && password === 'password') {
-      setShowSuccessMessage(true);
-      setShowErrorMessage(false);
-    } else {
-      setShowSuccessMessage(false);
-      setShowErrorMessage(true);
-    }
   };
 
   return (
