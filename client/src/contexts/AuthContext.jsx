@@ -8,22 +8,23 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = (username, password) => {
-    if (username === 'monciego' && password === 'password') {
-      setIsAuthenticated(true);
-      return true;
-    } else {
-      setIsAuthenticated(false);
-      return false;
-    }
+    const isValidCredentials =
+      username === 'monciego' && password === 'password';
+    setIsAuthenticated(isValidCredentials);
+    return isValidCredentials;
   };
 
   const logout = () => {
     setIsAuthenticated(false);
   };
 
+  const authValues = {
+    isAuthenticated,
+    login,
+    logout,
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={authValues}>{children}</AuthContext.Provider>
   );
 };
