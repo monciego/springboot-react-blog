@@ -1,0 +1,1 @@
+- I'm currently working on creating a login component using hardcoded values, which I plan to replace with real authentication once I've familiarized myself with Spring Security.
