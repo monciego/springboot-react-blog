@@ -36,6 +36,26 @@ Usage: When creating a Spring Boot project with Maven, you provide a group id al
 
 - mvnw and mvnw.cmd: These are wrapper scripts for Maven that allow you to run Maven commands without having to install Maven separately on your system. They ensure that the correct version of Maven is used for your project.
 
+@RestController:
+
+- What it does: This annotation is a combination of the @Controller and @ResponseBody annotations. It's used to define RESTful web services in Spring MVC.
+
+- Purpose: Marks a class as a controller where each method returns data meant to be serialized directly into the HTTP response body. Essentially, it tells Spring that the return values of the methods should be sent back to the client as-is, without any view rendering.
+
+@RequestMapping:
+
+- What it does: This annotation maps HTTP requests to handler methods in Spring MVC controllers.
+
+- Purpose: Specifies the URL path or paths at which a controller method can be accessed. It allows you to define the endpoint for your RESTful web service.
+
+- Usage: It can be applied at the class level to define a base URL for all methods in the controller, and/or at the method level to define additional URL paths or specify HTTP request methods (e.g., GET, POST, PUT, DELETE) that the method can handle.
+
+@GetMapping:
+
+- What it does: Tags a method to handle web requests for specific URLs.
+
+- How it works: You put @GetMapping before a method in your Java class. When someone visits that URL, Spring calls that method and sends back whatever it returns.
+
 ## React Context:
 
 - Context allows sharing data between components without manual passing through every level of the component tree.
