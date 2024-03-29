@@ -56,6 +56,18 @@ Usage: When creating a Spring Boot project with Maven, you provide a group id al
 
 - How it works: You put @GetMapping before a method in your Java class. When someone visits that URL, Spring calls that method and sends back whatever it returns.
 
+## Request Methods for REST API
+
+- GET - Retrieve details of resource
+- POST - Create new resource
+- PUT - Update an existing resource
+- PATCH - Update part of a resource
+- DELETE - Delete a resource
+
+# DAO (Data Access Object)
+
+- Is like a helper that knows how to talk to a database, fetch data from it, and save data to it, making it easier for your program to work with databases without having to deal with all the details itself.
+
 ## React Context:
 
 - Context allows sharing data between components without manual passing through every level of the component tree.
