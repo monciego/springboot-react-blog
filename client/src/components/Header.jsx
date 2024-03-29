@@ -8,12 +8,10 @@ const Header = () => {
   };
   return (
     <div>
-      {isAuthenticated ? (
+      {isAuthenticated && (
         <div>
           you are logged in - <button onClick={logout}>logout</button>
         </div>
-      ) : (
-        <div>please login</div>
       )}
     </div>
   );
