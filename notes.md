@@ -68,6 +68,26 @@ Usage: When creating a Spring Boot project with Maven, you provide a group id al
 
 - Is like a helper that knows how to talk to a database, fetch data from it, and save data to it, making it easier for your program to work with databases without having to deal with all the details itself.
 
+## Response Status for REST API
+
+- 200 OK: The request was successful. The server successfully processed the request and is returning the requested data.
+
+- 201 Created: The request was successful, and a new resource has been created. Typically used for POST requests that create new resources.
+
+- 204 No Content: The request was successful, but there is no content to return. This is often used for operations that don't return data, such as successful deletions.
+
+- 400 Bad Request: The request could not be understood by the server due to malformed syntax, missing parameters, etc. The client should modify the request and try again.
+
+- 401 Unauthorized: The request requires user authentication. The client must provide valid credentials (e.g., via HTTP Basic authentication) to access the resource.
+
+- 403 Forbidden: The server understood the request but refuses to authorize it. The client does not have permission to access the requested resource.
+
+- 404 Not Found: The server cannot find the requested resource. This is often used when the requested resource does not exist.
+
+- 405 Method Not Allowed: The request method (e.g., GET, POST, PUT, DELETE) is not supported for the requested resource.
+
+- 500 Internal Server Error: A generic error message indicating that something went wrong on the server's end. This is often used for unexpected server-side errors.
+
 ## React Context:
 
 - Context allows sharing data between components without manual passing through every level of the component tree.
